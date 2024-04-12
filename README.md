@@ -1,7 +1,7 @@
 # gen_final_proj
 
-##Study Background
+## Study Background
 
 eDNA
 
-##Methods
+## Methods
