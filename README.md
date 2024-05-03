@@ -112,3 +112,68 @@ cd /home/users/maf1092/final-proj/
 
 mkdir taxonomy
 
+qiime feature-classifier classify-sklearn \
+  --i-classifier /home/users/maf1092/final-proj/ref-database/mitofish-classifier.qza \
+  --i-reads /home/users/maf1092/final-proj/denoising/rep-seqs_GreatBay.qza \
+  --o-classification /home/users/maf1092/final-proj/taxonomy/GreatBay_taxonomy.qza
+
+qiime feature-classifier classify-sklearn \
+  --i-classifier /home/users/maf1092/final-proj/ref-database/mitofish-classifier.qza \
+  --i-reads /home/users/maf1092/final-proj/denoising/rep-seqs_Wells.qza \
+  --o-classification /home/users/maf1092/final-proj/taxonomy/Wells_taxonomy.qza
+
+qiime metadata tabulate \
+  --m-input-file /home/users/maf1092/final-proj/taxonomy/GreatBay_taxonomy.qza \
+  --o-visualization /home/users/maf1092/final-proj/taxonomy/GreatBay_taxonomy.qzv
+
+qiime metadata tabulate \
+  --m-input-file /home/users/maf1092/final-proj/taxonomy/Wells_taxonomy.qza \
+  --o-visualization /home/users/maf1092/final-proj/taxonomy/Wells_taxonomy.qzv
+
+###Barplot
+
+mkdir barplot
+
+qiime feature-table filter-samples \
+  --i-table /home/users/maf1092/final-proj/denoising/feature_table_GreatBay.qza \
+  --m-metadata-file /home/users/maf1092/final-proj/mifish-metadata.tsv \
+  --o-filtered-table /home/users/maf1092/final-proj/barplot/GreatBay_feature_table_filtered.qza
+
+qiime feature-table filter-samples \
+  --i-table /home/users/maf1092/final-proj/denoising/feature_table_Wells.qza \
+  --m-metadata-file /home/users/maf1092/final-proj/mifish-metadata.tsv \
+  --o-filtered-table /home/users/maf1092/final-proj/barplot/Wells_feature_table_filtered.qza
+
+mkdir merge-rep-seqs
+
+qiime feature-table merge-seqs \
+   --i-data /home/users/maf1092/final-proj/denoising/rep-seqs_GreatBay.qza \
+   --i-data /home/users/maf1092/final-proj/denoising/rep-seqs_Wells.qza \
+   --o-merged-data /home/users/maf1092/final-proj/merge-rep-seqs/BOTH_rep-seqs.qza
+
+qiime feature-table merge \
+  --i-tables /home/users/maf1092/final-proj/barplot/GreatBay_feature_table_filtered.qza \
+  --i-tables /home/users/maf1092/final-proj/barplot/Wells_feature_table_filtered.qza \
+  --o-merged-table /home/users/maf1092/final-proj/merge-rep-seqs/BOTH_feature_table.qza
+
+qiime feature-classifier classify-sklearn \
+  --i-classifier /home/users/maf1092/final-proj/ref-database/mitofish-classifier.qza \
+  --i-reads /home/users/maf1092/final-proj/merge-rep-seqs/BOTH_rep-seqs.qza \
+  --o-classification /home/users/maf1092/final-proj/merge-rep-seqs/BOTH_taxonomy.qza
+
+mv merge-rep-seqs/ merged-data/
+
+qiime taxa barplot \
+     --i-table /home/users/maf1092/final-proj/merged-data/BOTH_feature_table.qza \
+     --m-metadata-file /home/users/maf1092/final-proj/mifish-metadata.tsv \
+     --i-taxonomy /home/users/maf1092/final-proj/merged-data/BOTH_taxonomy.qza \
+     --o-visualization /home/users/maf1092/final-proj/merged-data/BOTH_barplot.qzv
+
+qiime phylogeny align-to-tree-mafft-fasttree \
+  --i-sequences /home/users/maf1092/final-proj/merged-data/BOTH_rep-seqs.qza \
+  --o-alignment /home/users/maf1092/final-proj/merged-data/BOTH_alignments \
+  --o-masked-alignment /home/users/maf1092/final-proj/merged-data/BOTH_masked-alignment \
+  --o-tree /home/users/maf1092/final-proj/merged-data/BOTH_unrooted-tree \
+  --o-rooted-tree /home/users/maf1092/final-proj/merged-data/BOTH_rooted-tree \
+  --p-n-threads 4
+
