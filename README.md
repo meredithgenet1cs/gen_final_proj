@@ -110,41 +110,7 @@ qiime feature-table tabulate-seqs \
 
 cd /home/users/maf1092/final-proj/
 
-mkdir taxonomy
-
-qiime feature-classifier classify-sklearn \
-  --i-classifier /home/users/maf1092/final-proj/ref-database/mitofish-classifier.qza \
-  --i-reads /home/users/maf1092/final-proj/denoising/rep-seqs_GreatBay.qza \
-  --o-classification /home/users/maf1092/final-proj/taxonomy/GreatBay_taxonomy.qza
-
-qiime feature-classifier classify-sklearn \
-  --i-classifier /home/users/maf1092/final-proj/ref-database/mitofish-classifier.qza \
-  --i-reads /home/users/maf1092/final-proj/denoising/rep-seqs_Wells.qza \
-  --o-classification /home/users/maf1092/final-proj/taxonomy/Wells_taxonomy.qza
-
-qiime metadata tabulate \
-  --m-input-file /home/users/maf1092/final-proj/taxonomy/GreatBay_taxonomy.qza \
-  --o-visualization /home/users/maf1092/final-proj/taxonomy/GreatBay_taxonomy.qzv
-
-qiime metadata tabulate \
-  --m-input-file /home/users/maf1092/final-proj/taxonomy/Wells_taxonomy.qza \
-  --o-visualization /home/users/maf1092/final-proj/taxonomy/Wells_taxonomy.qzv
-
-###Barplot
-
-mkdir barplot
-
-qiime feature-table filter-samples \
-  --i-table /home/users/maf1092/final-proj/denoising/feature_table_GreatBay.qza \
-  --m-metadata-file /home/users/maf1092/final-proj/mifish-metadata.tsv \
-  --o-filtered-table /home/users/maf1092/final-proj/barplot/GreatBay_feature_table_filtered.qza
-
-qiime feature-table filter-samples \
-  --i-table /home/users/maf1092/final-proj/denoising/feature_table_Wells.qza \
-  --m-metadata-file /home/users/maf1092/final-proj/mifish-metadata.tsv \
-  --o-filtered-table /home/users/maf1092/final-proj/barplot/Wells_feature_table_filtered.qza
-
-mkdir merged-data taxonomy
+mkdir taxonomy merged-data
 
 ## Taxonomy
 
@@ -231,6 +197,4 @@ biom convert \
 -i /home/users/maf1092/final-proj/tables/table-with-taxonomy.biom \
 -o /home/users/maf1092/final-proj/tables/otu-table.tsv \
 --to-tsv --header-key taxonomy
-
-
 
