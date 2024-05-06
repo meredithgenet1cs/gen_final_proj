@@ -144,36 +144,93 @@ qiime feature-table filter-samples \
   --m-metadata-file /home/users/maf1092/final-proj/mifish-metadata.tsv \
   --o-filtered-table /home/users/maf1092/final-proj/barplot/Wells_feature_table_filtered.qza
 
-mkdir merge-rep-seqs
+mkdir merged-data taxonomy
 
-qiime feature-table merge-seqs \
-   --i-data /home/users/maf1092/final-proj/denoising/rep-seqs_GreatBay.qza \
-   --i-data /home/users/maf1092/final-proj/denoising/rep-seqs_Wells.qza \
-   --o-merged-data /home/users/maf1092/final-proj/merge-rep-seqs/BOTH_rep-seqs.qza
-
-qiime feature-table merge \
-  --i-tables /home/users/maf1092/final-proj/barplot/GreatBay_feature_table_filtered.qza \
-  --i-tables /home/users/maf1092/final-proj/barplot/Wells_feature_table_filtered.qza \
-  --o-merged-table /home/users/maf1092/final-proj/merge-rep-seqs/BOTH_feature_table.qza
+## Taxonomy
 
 qiime feature-classifier classify-sklearn \
-  --i-classifier /home/users/maf1092/final-proj/ref-database/mitofish-classifier.qza \
-  --i-reads /home/users/maf1092/final-proj/merge-rep-seqs/BOTH_rep-seqs.qza \
-  --o-classification /home/users/maf1092/final-proj/merge-rep-seqs/BOTH_taxonomy.qza
+  --i-classifier  /home/users/maf1092/final-proj/ref-database/2mitofish-classifier.qza \
+  --i-reads /home/users/maf1092/final-proj/merged-data/BOTH_rep-seqs.qza \
+  --o-classification /home/users/maf1092/final-proj/taxonomy/classify-sklearn-taxonomy
 
-mv merge-rep-seqs/ merged-data/
+## Barplot
+
+mkdir new-barplot 
+
+qiime feature-table merge \
+  --i-tables /home/users/maf1092/final-proj/denoising/feature_table_GreatBay.qza \
+  --i-tables /home/users/maf1092/final-proj/denoising/feature_table_Wells.qza \
+  --o-merged-table /home/users/maf1092/final-proj/merged-data/combined_feature_table.qza
 
 qiime taxa barplot \
-     --i-table /home/users/maf1092/final-proj/merged-data/BOTH_feature_table.qza \
-     --m-metadata-file /home/users/maf1092/final-proj/mifish-metadata.tsv \
-     --i-taxonomy /home/users/maf1092/final-proj/merged-data/BOTH_taxonomy.qza \
-     --o-visualization /home/users/maf1092/final-proj/merged-data/BOTH_barplot.qzv
+     --i-table /home/users/maf1092/final-proj/merged-data/combined_feature_table.qza \
+     --i-taxonomy /home/users/maf1092/final-proj/taxonomy/classify-sklearn-taxonomy.qza \
+     --o-visualization /home/users/maf1092/final-proj/new-barplot/BOTH-barplot.qzv
+
+qiime feature-table filter-samples \
+  --i-table /home/users/maf1092/final-proj/merged-data/combined_feature_table.qza \
+  --m-metadata-file /home/users/maf1092/final-proj/new_meta.tsv \
+  --o-filtered-table /home/users/maf1092/final-proj/merged-data/combined_filter_feature_table.qza
+mkdir new-phylo-tree
 
 qiime phylogeny align-to-tree-mafft-fasttree \
   --i-sequences /home/users/maf1092/final-proj/merged-data/BOTH_rep-seqs.qza \
-  --o-alignment /home/users/maf1092/final-proj/merged-data/BOTH_alignments \
-  --o-masked-alignment /home/users/maf1092/final-proj/merged-data/BOTH_masked-alignment \
-  --o-tree /home/users/maf1092/final-proj/merged-data/BOTH_unrooted-tree \
-  --o-rooted-tree /home/users/maf1092/final-proj/merged-data/BOTH_rooted-tree \
+  --o-alignment /home/users/maf1092/final-proj/new-phylo-tree/alignments \
+  --o-masked-alignment /home/users/maf1092/final-proj/new-phylo-tree/masked-alignment \
+  --o-tree /home/users/maf1092/final-proj/new-phylo-tree/unrooted-tree \
+  --o-rooted-tree /home/users/maf1092/final-proj/new-phylo-tree/rooted-tree \
   --p-n-threads 4
+
+qiime diversity core-metrics-phylogenetic \
+  --i-phylogeny /home/users/maf1092/final-proj/new-phylo-tree/rooted-tree.qza \
+  --i-table /home/users/maf1092/final-proj/merged-data/combined_filter_feature_table.qza \
+  --p-sampling-depth 500 \
+  --m-metadata-file /home/users/maf1092/final-proj/new_meta.tsv  \
+  --p-n-jobs-or-threads 4 \
+  --output-dir core-metrics
+
+qiime diversity alpha-phylogenetic \
+  --i-table /home/users/maf1092/final-proj/merged-data/combined_filter_feature_table.qza \
+  --i-phylogeny /home/users/maf1092/final-proj/new-phylo-tree/rooted-tree.qza \
+  --p-metric faith_pd \
+  --o-alpha-diversity /home/users/maf1092/final-proj/new-phylo-tree/core-metrics/faith_pd
+
+qiime diversity alpha-rarefaction \
+    --i-table /home/users/maf1092/final-proj/merged-data/combined_filter_feature_table.qza \
+    --i-phylogeny /home/users/maf1092/final-proj/new-phylo-tree/rooted-tree.qza \
+    --p-max-depth 150000 \
+    --m-metadata-file /home/users/maf1092/final-proj/new_meta.tsv  \
+    --p-min-depth 100 \
+    --p-steps 15 \
+    --o-visualization /home/users/maf1092/final-proj/new-phylo-tree/core-metrics/alpha-rarefaction
+
+qiime diversity alpha-group-significance \
+    --i-alpha-diversity /home/users/maf1092/final-proj/new-phylo-tree/core-metrics/faith_pd.qza \
+    --m-metadata-file /home/users/maf1092/final-proj/new_meta.tsv  \
+    --o-visualization /home/users/maf1092/final-proj/new-phylo-tree/core-metrics/alpha-group-significance
+
+## Table in Excel
+
+
+qiime tools export \
+  --input-path /home/users/maf1092/final-proj/taxonomy/classify-sklearn-taxonomy.qza \
+  --output-path /home/users/maf1092/final-proj/tables/
+
+qiime tools export \
+  --input-path /home/users/maf1092/final-proj/merged-data/combined_filter_feature_table.qza \
+  --output-path /home/users/maf1092/final-proj/tables/
+
+biom add-metadata \
+  --input-fp /home/users/maf1092/final-proj/tables/feature-table.biom \
+  -o /home/users/maf1092/final-proj/tables/table-with-taxonomy.biom \
+  --observation-metadata-fp /home/users/maf1092/final-proj/tables/taxonomy.tsv \
+  --observation-header "taxonomy" \
+  --sc-separated taxonomy
+
+biom convert \
+-i /home/users/maf1092/final-proj/tables/table-with-taxonomy.biom \
+-o /home/users/maf1092/final-proj/tables/otu-table.tsv \
+--to-tsv --header-key taxonomy
+
+
 
