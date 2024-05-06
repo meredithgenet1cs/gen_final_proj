@@ -23,7 +23,13 @@ cp /tmp/gen711_project_data/eDNA-fqs/mifish/GreatBay-Metadata.tsv /home/users/ma
 
 cp /tmp/gen711_project_data/eDNA-fqs/mifish/Wells-Metadata.tsv /home/users/maf1092/final-proj
 
+cp /tmp/new_meta.tsv /home/users/maf1092/final-proj
+
 cd final-proj/
+
+mkdir ref-database
+
+cp /tmp/gen711_project_data/eDNA-fqs/mifish/ref-database/mitofish-classifier.qza /home/users/maf1092/final-proj/ref-database/2mitofish-classifier.qza
 
 mkir trimmed_fastqs
 
@@ -112,6 +118,21 @@ cd /home/users/maf1092/final-proj/
 
 mkdir taxonomy merged-data
 
+qiime feature-table merge-seqs \
+   --i-data /home/users/maf1092/final-proj/denoising/rep-seqs_GreatBay.qza \
+   --i-data /home/users/maf1092/final-proj/denoising/rep-seqs_Wells.qza \
+   --o-merged-data /home/users/maf1092/final-proj/merged-data/BOTH_rep-seqs.qza
+
+qiime feature-table merge \
+  --i-tables /home/users/maf1092/final-proj/denoising/feature_table_GreatBay.qza \
+  --i-tables /home/users/maf1092/final-proj/denoising/feature_table_Wells.qza \
+  --o-merged-table /home/users/maf1092/final-proj/merged-data/combined_feature_table.qza
+
+qiime feature-classifier classify-sklearn \
+  --i-classifier /home/users/maf1092/final-proj/ref-database/2mitofish-classifier.qza \
+  --i-reads /home/users/maf1092/final-proj/merged-data/BOTH_rep-seqs.qza \
+
+
 ## Taxonomy
 
 qiime feature-classifier classify-sklearn \
@@ -179,7 +200,6 @@ qiime diversity alpha-group-significance \
     --o-visualization /home/users/maf1092/final-proj/new-phylo-tree/core-metrics/alpha-group-significance
 
 ## Table in Excel
-
 
 qiime tools export \
   --input-path /home/users/maf1092/final-proj/taxonomy/classify-sklearn-taxonomy.qza \
