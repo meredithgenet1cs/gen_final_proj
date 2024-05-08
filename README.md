@@ -118,6 +118,8 @@ cd /home/users/maf1092/final-proj/
 
 mkdir taxonomy merged-data
 
+## Taxonomy
+
 qiime feature-table merge-seqs \
    --i-data /home/users/maf1092/final-proj/denoising/rep-seqs_GreatBay.qza \
    --i-data /home/users/maf1092/final-proj/denoising/rep-seqs_Wells.qza \
@@ -131,9 +133,6 @@ qiime feature-table merge \
 qiime feature-classifier classify-sklearn \
   --i-classifier /home/users/maf1092/final-proj/ref-database/2mitofish-classifier.qza \
   --i-reads /home/users/maf1092/final-proj/merged-data/BOTH_rep-seqs.qza \
-
-
-## Taxonomy
 
 qiime feature-classifier classify-sklearn \
   --i-classifier  /home/users/maf1092/final-proj/ref-database/2mitofish-classifier.qza \
