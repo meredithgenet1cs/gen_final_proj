@@ -135,10 +135,6 @@ qiime feature-table merge \
   --o-merged-table /home/users/maf1092/final-proj/merged-data/combined_feature_table.qza
 
 qiime feature-classifier classify-sklearn \
-  --i-classifier /home/users/maf1092/final-proj/ref-database/2mitofish-classifier.qza \
-  --i-reads /home/users/maf1092/final-proj/merged-data/BOTH_rep-seqs.qza \
-
-qiime feature-classifier classify-sklearn \
   --i-classifier  /home/users/maf1092/final-proj/ref-database/2mitofish-classifier.qza \
   --i-reads /home/users/maf1092/final-proj/merged-data/BOTH_rep-seqs.qza \
   --o-classification /home/users/maf1092/final-proj/taxonomy/classify-sklearn-taxonomy
