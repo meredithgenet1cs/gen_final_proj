@@ -139,28 +139,19 @@ qiime feature-classifier classify-sklearn \
   --i-reads /home/users/maf1092/final-proj/merged-data/BOTH_rep-seqs.qza \
   --o-classification /home/users/maf1092/final-proj/taxonomy/classify-sklearn-taxonomy
 
-## Barplot
+## Barplot and Charts
 
-mkdir new-barplot 
-
-qiime feature-table merge \
-  --i-tables /home/users/maf1092/final-proj/denoising/feature_table_GreatBay.qza \
-  --i-tables /home/users/maf1092/final-proj/denoising/feature_table_Wells.qza \
-  --o-merged-table /home/users/maf1092/final-proj/merged-data/combined_feature_table.qza
+mkdir new-barplot new-phylo-tree
 
 qiime taxa barplot \
      --i-table /home/users/maf1092/final-proj/merged-data/combined_feature_table.qza \
      --i-taxonomy /home/users/maf1092/final-proj/taxonomy/classify-sklearn-taxonomy.qza \
      --o-visualization /home/users/maf1092/final-proj/new-barplot/BOTH-barplot.qzv
 
-## Other Charts
-
 qiime feature-table filter-samples \
   --i-table /home/users/maf1092/final-proj/merged-data/combined_feature_table.qza \
   --m-metadata-file /home/users/maf1092/final-proj/new_meta.tsv \
   --o-filtered-table /home/users/maf1092/final-proj/merged-data/combined_filter_feature_table.qza
-  
-mkdir new-phylo-tree
 
 qiime phylogeny align-to-tree-mafft-fasttree \
   --i-sequences /home/users/maf1092/final-proj/merged-data/BOTH_rep-seqs.qza \
