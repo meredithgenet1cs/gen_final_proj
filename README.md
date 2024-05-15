@@ -7,6 +7,15 @@
    This study compared fish species using the MiFish locus (or 12s) primers which are designed specifically for marine species.
    The data was analyzed using qiime2.
 
+<details>
+<summary>Barplot
+<br>
+   
+This shows the abundance of DNA per sample of each species that was identified.
+![image](barplot-full.png)
+
+</details>
+
 ## Methods
 
 code:
@@ -210,14 +219,6 @@ biom convert \
 ## Results
 
 These are the results of some of the data
-
-<details>
-<summary>Barplot
-<br>
-This shows the abundance of DNA per sample of each species that was identified.
-![image](barplot-full.png)
-</details>
-
 
 ### Barplot
 
