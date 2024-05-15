@@ -6,12 +6,13 @@ eDNA
 
 ## Methods
 
-pictures:
-upload then
-![](./ name of file.png)
+   This study used samples taken from multiple different sources such as the Lamprey river, Oyster River, and the Squamscott River. and analyzed them through eDNA metabarcoding
+   Metabarcoding is taking samples from the environment where DNA can be extracted and then amplifying it to readable levels using PCR primers
+   This study compared fish species using the MiFish locus (or 12s) primers which are designed specifically for marine species
 
-link:
-[study name](link)
+pictures:
+upload them
+![](./ name of file.png)
 
 code:
 
