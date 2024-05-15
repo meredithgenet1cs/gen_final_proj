@@ -10,7 +10,7 @@
 <details>
 <summary>Barplot</summary>
 This shows the abundance of DNA per sample of each species that was identified.
-<img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/barplot-full.png"
+<img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/barplot-full.png">
 </details>
 
 ## Methods
