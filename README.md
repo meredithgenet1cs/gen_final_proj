@@ -221,4 +221,10 @@ This shows the abundance of DNA per sample of each species that was identified.
 
 ### Alpha Rarefaction
 
-This shows the if the sequencing depth of the samples is deep enough for the analysis we used.
+This shows the if the sequencing depth of the samples is deep enough for the analysis we used. This was made using the Shannon diversity index.
+![image](alpha-rarefaction.png)
+
+### Alpha Significance
+
+This shows the differences between the Great Bay and Wells data sets
+![image](alpha-significance.png)
