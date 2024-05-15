@@ -165,6 +165,8 @@ qiime diversity alpha-group-significance
 --m-metadata-file /home/users/maf1092/final-proj/new_meta.tsv
 --o-visualization /home/users/maf1092/final-proj/new-phylo-tree/core-metrics/alpha-group-significance
 
+mkdir tables
+
 qiime tools export
 --input-path /home/users/maf1092/final-proj/taxonomy/classify-sklearn-taxonomy.qza
 --output-path /home/users/maf1092/final-proj/tables/
