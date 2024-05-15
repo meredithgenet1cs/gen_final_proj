@@ -277,20 +277,3 @@ Miya, M., Sato, Y., Fukunaga, T., Sado, T., Poulsen, J. Y., Sato, K., Minamoto, 
 Xiong, F., Shu, L., Gan, X., Zeng, H., He, S., & Peng, Z. (2022). Methodology for fish biodiversity monitoring with environmental DNA metabarcoding: The primers, databases and bioinformatic pipelines. Water Biology and Security, 1(1), 100007. https://doi.org/10.1016/j.watbs.2022.100007   
 
 </details>
-
-Bliek Tijs, Frans van der Kloet and Marc Galland (eds): "RNA-seq lesson."  Version 2020.04. https://github.com/ScienceParkStudyGroup/rnaseq-lessonhttps://scienceparkstudygroup.github.io/microbiome-lesson/06-beta-diversity/index.html
-
-Bolyen E, Rideout JR, Dillon MR, Bokulich NA, Abnet CC, Al-Ghalith GA, Alexander H, Alm EJ, Arumugam M, Asnicar F, Bai Y, Bisanz JE, Bittinger K, Brejnrod A, Brislawn CJ, Brown CT, Callahan BJ, Caraballo-Rodríguez AM, Chase J, Cope EK, Da Silva R, Diener C, Dorrestein PC, Douglas GM, Durall DM, Duvallet C, Edwardson CF, Ernst M, Estaki M, Fouquier J, Gauglitz JM, Gibbons SM, Gibson DL, Gonzalez A, Gorlick K, Guo J, Hillmann B, Holmes S, Holste H, Huttenhower C, Huttley GA, Janssen S, Jarmusch AK, Jiang L, Kaehler BD, Kang KB, Keefe CR, Keim P, Kelley ST, Knights D, Koester I, Kosciolek T, Kreps J, Langille MGI, Lee J, Ley R, Liu YX, Loftfield E, Lozupone C, Maher M, Marotz C, Martin BD, McDonald D, McIver LJ, Melnik AV, Metcalf JL, Morgan SC, Morton JT, Naimey AT, Navas-Molina JA, Nothias LF, Orchanian SB, Pearson T, Peoples SL, Petras D, Preuss ML, Pruesse E, Rasmussen LB, Rivers A, Robeson MS, Rosenthal P, Segata N, Shaffer M, Shiffer A, Sinha R, Song SJ, Spear JR, Swafford AD, Thompson LR, Torres PJ, Trinh P, Tripathi A, Turnbaugh PJ, Ul-Hasan S, van der Hooft JJJ, Vargas F, Vázquez-Baeza Y, Vogtmann E, von Hippel M, Walters W, Wan Y, Wang M, Warren J, Weber KC, Williamson CHD, Willis AD, Xu ZZ, Zaneveld JR, Zhang Y, Zhu Q, Knight R, and Caporaso JG. 2019. Reproducible, interactive, scalable and extensible microbiome data science using QIIME 2. Nature Biotechnology 37: 852–857. https://doi.org/10.1038/s41587-019-0209-9
-
-Faith, D. P. Phylogenetic diversity https://danielpfaith.wordpress.com/phylogenetic-diversity/ 
-
-Froese, R. and D. Pauly. Editors. 2024.FishBase. World Wide Web electronic publication.
-www.fishbase.org, ( 02/2024 )
-https://www.fishbase.de/summary/Pholis-crassispina
-
-Miller, J.
-https://github.com/jthmiller/eDNA-metabarcoding-intro/blob/Gen711-811/metadata.md
-
-Miya, M., Sato, Y., Fukunaga, T., Sado, T., Poulsen, J. Y., Sato, K., Minamoto, T., Yamamoto, S., Yamanaka, H., Araki, H., Kondoh, M., & Iwasaki, W. (2015, July 1). MiFish, a set of universal PCR primers for metabarcoding environmental DNA from fishes: Detection of more than 230 subtropical Marine Species | Royal Society Open Science. Royal Society Open Science. https://royalsocietypublishing.org/doi/10.1098/rsos.150088
-
-Xiong, F., Shu, L., Gan, X., Zeng, H., He, S., & Peng, Z. (2022). Methodology for fish biodiversity monitoring with environmental DNA metabarcoding: The primers, databases and bioinformatic pipelines. Water Biology and Security, 1(1), 100007. https://doi.org/10.1016/j.watbs.2022.100007   
