@@ -120,8 +120,8 @@ qiime feature-table tabulate-seqs \
         --o-visualization /home/users/maf1092/final-proj/denoising/rep-seqs_Wells.qzv
 </details>
 
-
-### Taxonomy
+<details>
+<summary>Taxonomy</summary>
 
 cd /home/users/maf1092/final-proj/
 
@@ -141,8 +141,10 @@ qiime feature-classifier classify-sklearn \
   --i-classifier  /home/users/maf1092/final-proj/ref-database/2mitofish-classifier.qza \
   --i-reads /home/users/maf1092/final-proj/merged-data/BOTH_rep-seqs.qza \
   --o-classification /home/users/maf1092/final-proj/taxonomy/classify-sklearn-taxonomy
+</details>
 
-### Barplot and Charts
+<details>
+<summary>Barplots and Charts</summary>
 
 mkdir new-barplot new-phylo-tree
 
@@ -191,8 +193,12 @@ qiime diversity alpha-group-significance \
     --i-alpha-diversity /home/users/maf1092/final-proj/new-phylo-tree/core-metrics/faith_pd.qza \
     --m-metadata-file /home/users/maf1092/final-proj/new_meta.tsv  \
     --o-visualization /home/users/maf1092/final-proj/new-phylo-tree/core-metrics/alpha-group-significance
+</details>
 
-### Table in Excel
+<details>
+<summary>Table in Excel</summary>
+
+mkdir tables
 
 qiime tools export \
   --input-path /home/users/maf1092/final-proj/taxonomy/classify-sklearn-taxonomy.qza \
@@ -213,6 +219,7 @@ biom convert \
 -i /home/users/maf1092/final-proj/tables/table-with-taxonomy.biom \
 -o /home/users/maf1092/final-proj/tables/otu-table.tsv \
 --to-tsv --header-key taxonomy
+</details>
 
 ## Results
 
