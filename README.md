@@ -248,7 +248,9 @@ This shows the differences between the Great Bay and Wells data sets.
 <details>
 <summary>Jaccard</summary>
 Shows the difference between data based on the presence or absence of data. Three different angles are shown emphasizing the different axes.
+   
    Red= Great Bay
+   
    Blue= Wells
 <img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/jaccard-emperor.png">
 <img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/jaccard-emperor-2.png">
