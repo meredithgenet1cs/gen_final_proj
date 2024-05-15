@@ -212,7 +212,7 @@ biom convert \
 These are the results of some of the data
 
 <details>
-<summary>### Barplot
+<summary>Barplot
 <br>
 This shows the abundance of DNA per sample of each species that was identified.
 ![image](barplot-full.png)
