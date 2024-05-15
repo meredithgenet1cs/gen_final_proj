@@ -217,4 +217,4 @@ These are the results of the data
 ### Barplot
 
 This shows the abundance of DNA per sample of each species that was identified
-![image](barplot-full
+![image](barplot-full.png)
