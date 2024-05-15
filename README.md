@@ -241,13 +241,13 @@ Shows the difference between data based on the presence or absence of data. Thre
 
 <details>
 <summary>Bray-Curtis</summary>
-Shows the difference between data based on the abuncance of species. Three different angles are shown emphasizing the different axes.
+Shows the difference between data based on the abundance of species. Three different angles are shown emphasizing the different axes.
 <img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/Bray-curtis1.png">
 <img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/Bray-curtis2.png">
 <img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/Bray-curtis3.png">
 </details>
 
-details>
+<details>
 <summary>Weighted Unifrac</summary>
 Shows the difference between data based on the abundance and phylogeny. Three different angles are shown emphasizing the different axes.
 <img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/weighted-unifrac-1.png">
