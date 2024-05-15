@@ -15,6 +15,11 @@ This shows the abundance of DNA per sample of each species that was identified.
 
 </details>
 
+<details>
+<summary>Barplot</summary>
+This shows the abundance of DNA per sample of each species that was identified.
+</details>
+
 ## Methods
 
 code:
