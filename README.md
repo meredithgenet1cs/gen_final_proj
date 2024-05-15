@@ -9,8 +9,9 @@
 
 ## Methods
 
-code:
-
+<details>
+<summary>Code for Raw Data</summary>
+   
 mkdir final-proj 
 
 cp -R /tmp/gen711_project_data/eDNA-fqs/mifish/fastqs/ /home/users/maf1092/final-proj
@@ -28,6 +29,8 @@ mkdir ref-database
 cp /tmp/gen711_project_data/eDNA-fqs/mifish/ref-database/mitofish-classifier.qza /home/users/maf1092/final-proj/ref-database/2mitofish-classifier.qza
 
 mkir trimmed_fastqs
+</details>
+
 
 ### Filter Raw Reads
 
