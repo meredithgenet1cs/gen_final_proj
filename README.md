@@ -239,26 +239,21 @@ Shows the difference between data based on the presence or absence of data. Thre
 <img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/jaccard-emperor-3.png">
 </details>
 
-### Jaccard
-
+<details>
+<summary>Bray-Curtis</summary>
 Shows the difference between data based on the presence or absence of data. Three different angles are shown emphasizing the different axes.
-![image](jaccard-emperor.png)
-![image](jaccard-emperor-2.png)
-![image](jaccard-emperor-3.png)
+<img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/Bray-curtis1.png">
+<img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/Bray-curtis2.png">
+<img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/Bray-curtis3.png">
+</details>
 
-### Bray-Curtis
-
-Shows the difference between data based on the abundance of data. Three different angles are shown emphasizing the different axes.
-![image](Bray-curtis1.png)
-![image](Bray-curtis2.png)
-![image](Bray-curtis3.png)
-
-### Weighted Unifrac
-
-Shows the diffference between data based on the abuncance and the phylogeny of data. Three different angles are shown emphasizing the different axes.
-![image](weighted-unifrac-1.png)
-![image](weighted-unifrac-2.png)
-![image](weighted-unifrac-3.png)
+details>
+<summary>Bray-Curtis</summary>
+Shows the difference between data based on the presence or absence of data. Three different angles are shown emphasizing the different axes.
+<img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/weighted-unifrac-1.png">
+<img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/weighted-unifrac-2.png">
+<img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/weighted-unifrac-3.png">
+</details>
 
 ## Bibliography
 
