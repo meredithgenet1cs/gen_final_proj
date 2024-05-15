@@ -2,10 +2,10 @@
 
 ## Study Background
 
-   This study used samples taken from multiple different sources such as the Lamprey river, Oyster River, and the Squamscott River. and analyzed through eDNA metabarcoding
-   Metabarcoding is taking samples from the environment where DNA can be extracted and then amplifying it to readable levels using PCR primers
-   This study compared fish species using the MiFish locus (or 12s) primers which are designed specifically for marine species
-   The data was analyzed using qiime2
+   This study used samples taken from multiple different sources such as the Lamprey river, Oyster River, and the Squamscott River. and analyzed through eDNA metabarcoding.
+   Metabarcoding is taking samples from the environment where DNA can be extracted and then amplifying it to readable levels using PCR primers.
+   This study compared fish species using the MiFish locus (or 12s) primers which are designed specifically for marine species.
+   The data was analyzed using qiime2.
 
 ## Methods
 
@@ -216,5 +216,9 @@ These are the results of the data
 
 ### Barplot
 
-This shows the abundance of DNA per sample of each species that was identified
+This shows the abundance of DNA per sample of each species that was identified.
 ![image](barplot-full.png)
+
+### Alpha Rarefaction
+
+This shows the if the sequencing depth of the samples is deep enough for the analysis we used.
