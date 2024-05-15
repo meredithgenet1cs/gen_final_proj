@@ -31,9 +31,10 @@ cp /tmp/gen711_project_data/eDNA-fqs/mifish/ref-database/mitofish-classifier.qza
 mkir trimmed_fastqs
 </details>
 
+<details>
+<summary>Filter Raw Reads</summary>
 
-### Filter Raw Reads
-
+   
 qiime tools import \
    --type "SampleData[PairedEndSequencesWithQuality]"  \
    --input-format CasavaOneEightSingleLanePerSampleDirFmt \
@@ -75,6 +76,10 @@ qiime demux summarize \
     --o-visualization  /home/users/maf1092/final-proj/trimmed_fastqs/demux-summ_Wells.qzv
 
 mkdir denoising
+</details>
+
+
+
 
 ### Denoising
 
