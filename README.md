@@ -29,7 +29,7 @@ cp /tmp/gen711_project_data/eDNA-fqs/mifish/ref-database/mitofish-classifier.qza
 
 mkir trimmed_fastqs
 
-## Filter Raw Reads
+### Filter Raw Reads
 
 qiime tools import \
    --type "SampleData[PairedEndSequencesWithQuality]"  \
@@ -73,7 +73,7 @@ qiime demux summarize \
 
 mkdir denoising
 
-## Denoising
+### Denoising
 
 qiime dada2 denoise-paired \
     --i-demultiplexed-seqs /home/users/maf1092/final-proj/trimmed_fastqs/clean-trimmed_GreatBay.qza  \
@@ -118,7 +118,7 @@ cd /home/users/maf1092/final-proj/
 
 mkdir taxonomy merged-data
 
-## Taxonomy
+### Taxonomy
 
 qiime feature-table merge-seqs \
    --i-data /home/users/maf1092/final-proj/denoising/rep-seqs_GreatBay.qza \
@@ -135,7 +135,7 @@ qiime feature-classifier classify-sklearn \
   --i-reads /home/users/maf1092/final-proj/merged-data/BOTH_rep-seqs.qza \
   --o-classification /home/users/maf1092/final-proj/taxonomy/classify-sklearn-taxonomy
 
-## Barplot and Charts
+### Barplot and Charts
 
 mkdir new-barplot new-phylo-tree
 
@@ -185,7 +185,7 @@ qiime diversity alpha-group-significance \
     --m-metadata-file /home/users/maf1092/final-proj/new_meta.tsv  \
     --o-visualization /home/users/maf1092/final-proj/new-phylo-tree/core-metrics/alpha-group-significance
 
-## Table in Excel
+### Table in Excel
 
 qiime tools export \
   --input-path /home/users/maf1092/final-proj/taxonomy/classify-sklearn-taxonomy.qza \
@@ -209,7 +209,7 @@ biom convert \
 
 ## Results
 
-These are the results of the data
+These are the results of some of the data
 
 ![image](name)
 
@@ -226,5 +226,22 @@ This shows the if the sequencing depth of the samples is deep enough for the ana
 
 ### Alpha Significance
 
-This shows the differences between the Great Bay and Wells data sets
+This shows the differences between the Great Bay and Wells data sets.
 ![image](alpha-significance.png)
+
+### Emperor Plots
+
+### Jaccard
+
+Shows the difference between data based on the presence or absence of data. Three different angles are shown emphasizing the different axes.
+![image](jaccard-emperor.png)
+![image](jaccard-emperor-2.png)
+![image](jaccard-emperor-3.png)
+
+### Bray-Curtis
+
+Shows the difference between data based on the abundance of data. Three different angles are shown emphasizing the different axes.
+
+### Weighted Unifrac
+
+Shows the diffference between data based on the abuncance and the phylogeny of data. Three different angles are shown emphasizing the different axes.
