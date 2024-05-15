@@ -7,12 +7,6 @@
    This study compared fish species using the MiFish locus (or 12s) primers which are designed specifically for marine species.
    The data was analyzed using qiime2.
 
-<details>
-<summary>Barplot</summary>
-This shows the abundance of DNA per sample of each species that was identified.
-<img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/barplot-full.png">
-</details>
-
 ## Methods
 
 code:
@@ -217,22 +211,33 @@ biom convert \
 
 These are the results of some of the data
 
-### Barplot
-
+<details>
+<summary>Barplot</summary>
 This shows the abundance of DNA per sample of each species that was identified.
-![image](barplot-full.png)
+<img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/barplot-full.png">
+</details>
 
-### Alpha Rarefaction
-
+<details>
+<summary>Alpha Rarefaction</summary>
 This shows the if the sequencing depth of the samples is deep enough for the analysis we used. This was made using the Shannon diversity index.
-![image](alpha-rarefaction.png)
+<img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/alpha-rarefaction.png">
+</details>
 
-### Alpha Significance
-
+<details>
+<summary>Alpha Significance</summary>
 This shows the differences between the Great Bay and Wells data sets.
-![image](alpha-significance.png)
+<img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/alpha-significance.png">
+</details>
 
 ### Emperor Plots
+
+<details>
+<summary>Jaccard</summary>
+Shows the difference between data based on the presence or absence of data. Three different angles are shown emphasizing the different axes.
+<img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/jaccard-emperor.png">
+<img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/jaccard-emperor-2.png">
+<img src="https://github.com/meredithgenet1cs/gen_final_proj/blob/main/jaccard-emperor-3.png">
+</details>
 
 ### Jaccard
 
