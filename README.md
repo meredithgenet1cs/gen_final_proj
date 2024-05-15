@@ -27,13 +27,12 @@ cd final-proj/
 mkdir ref-database
 
 cp /tmp/gen711_project_data/eDNA-fqs/mifish/ref-database/mitofish-classifier.qza /home/users/maf1092/final-proj/ref-database/2mitofish-classifier.qza
-
-mkir trimmed_fastqs
 </details>
 
 <details>
 <summary>Filter Raw Reads</summary>
 
+mkir trimmed_fastqs
    
 qiime tools import \
    --type "SampleData[PairedEndSequencesWithQuality]"  \
@@ -74,14 +73,12 @@ qiime demux summarize \
 qiime demux summarize \
     --i-data /home/users/maf1092/final-proj/trimmed_fastqs/clean-trimmed_Wells.qza \
     --o-visualization  /home/users/maf1092/final-proj/trimmed_fastqs/demux-summ_Wells.qzv
-
-mkdir denoising
 </details>
 
+<details>
+<summary>Denoising</summary>
 
-
-
-### Denoising
+mkdir denoising
 
 qiime dada2 denoise-paired \
     --i-demultiplexed-seqs /home/users/maf1092/final-proj/trimmed_fastqs/clean-trimmed_GreatBay.qza  \
@@ -121,12 +118,14 @@ qiime feature-table tabulate-seqs \
 qiime feature-table tabulate-seqs \
         --i-data /home/users/maf1092/final-proj/denoising/rep-seqs_Wells.qza \
         --o-visualization /home/users/maf1092/final-proj/denoising/rep-seqs_Wells.qzv
+</details>
+
+
+### Taxonomy
 
 cd /home/users/maf1092/final-proj/
 
 mkdir taxonomy merged-data
-
-### Taxonomy
 
 qiime feature-table merge-seqs \
    --i-data /home/users/maf1092/final-proj/denoising/rep-seqs_GreatBay.qza \
