@@ -12,7 +12,7 @@
 <details>
 <summary>Code for Raw Data</summary>
    
-mkdir final-proj 
+   mkdir final-proj 
 
 cp -R /tmp/gen711_project_data/eDNA-fqs/mifish/fastqs/ /home/users/maf1092/final-proj
 
